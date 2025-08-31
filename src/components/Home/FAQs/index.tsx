@@ -28,7 +28,7 @@ const FAQ: React.FC = () => {
                             FAQs
                         </p>
                         <h2 className='lg:text-52 text-40 leading-[1.2] font-medium text-dark dark:text-white'>
-                            Everything about Homely homes
+                            Everything about Cm Properties homes
                         </h2>
                         <p className='text-dark/50 dark:text-white/50 pr-20'>
                             We know that buying, selling, or investing in real estate can be overwhelming. Here are some frequently asked questions to help guide you through the process

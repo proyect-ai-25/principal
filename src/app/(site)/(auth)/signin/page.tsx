@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title:
-        "Iniciar sesión | Homely",
+        "Iniciar sesión | Cm Properties",
 };
 
 const SigninPage = () => {

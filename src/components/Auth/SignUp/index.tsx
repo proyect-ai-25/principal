@@ -6,6 +6,10 @@ import SocialSignUp from "../SocialSignUp";
 import Logo from "@/components/Layout/Header/BrandLogo/Logo";
 import { useContext, useState } from "react";
 import AuthDialogContext from "@/app/context/AuthDialogContext";
+import config from "../../../../config";
+import { registrarUsuario } from "../../../actions/UsuarioAction"
+
+
 const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -19,7 +23,13 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
     const value = Object.fromEntries(data.entries());
     const finalData = { ...value };
 
-    fetch("/api/register", {
+
+    console.log('register', finalData);
+    registrarUsuario(finalData).then(() => {
+      router.push("/properties");
+    });
+
+    /*fetch(config.apiUrl + "/api/usuario/registrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,12 +38,14 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Successfully registered");
+        toast.success("Registrado exitosamente");
         setLoading(false);
-        router.push("/");
+        //router.push("/properties");
+            console.log('register1', JSON.stringify(finalData));
       })
       .catch((err) => {
         toast.error(err.message);
+            console.log('err.message', err.message);
         setLoading(false);
       });
     setTimeout(() => {
@@ -43,7 +55,7 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
 
     setTimeout(() => {
       authDialog?.setIsUserRegistered(false);
-    }, 1100);
+    }, 1100);*/
   };
 
   return (
@@ -65,8 +77,17 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
         <div className="mb-[22px]">
           <input
             type="text"
-            placeholder="Name"
-            name="name"
+            placeholder="Nombre"
+            name="nombre"
+            required
+            className="w-full rounded-md border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
+          />
+        </div>
+        <div className="mb-[22px]">
+          <input
+            type="text"
+            placeholder="Apellido"
+            name="apellido"
             required
             className="w-full rounded-md border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
           />
@@ -94,24 +115,24 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
             type="submit"
             className="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:!bg-darkprimary dark:hover:!bg-darkprimary"
           >
-            Inscribirse
+            Registrarse
           </button>
         </div>
       </form>
 
       <p className="text-center mb-4 text-base">
-        By creating an account you are agree with our{" "}
+        Al crear una cuenta, acepta nuestra Política de{" "}
         <Link href="/" className="text-primary hover:underline">
-          Privacy
+          Privacidad
         </Link>{" "}
-        and{" "}
+        y{" "}
         <Link href="/" className="text-primary hover:underline">
-          Policy
+          términos de servicio.
         </Link>
       </p>
 
       <p className="text-center text-base">
-        Already have an account?
+        ¿Ya tienes una cuenta?
         <Link
           href="/"
           className="pl-2 text-primary hover:bg-darkprimary hover:underline"

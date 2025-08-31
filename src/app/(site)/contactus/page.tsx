@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Contact Us | Homely",
+    title: "Contact Us | Cm Properties",
 };
 
 export default function ContactUs() {
@@ -25,11 +25,11 @@ export default function ContactUs() {
         </div>
         <div className='text-center'>
           <h3 className='text-4xl sm:text-52 font-medium tracking-tighter text-black dark:text-white mb-3 leading-10 sm:leading-14'>
-            Have questions? ready to help!
+            ¿Tienes preguntas? ¡Estamos listos para ayudar!
           </h3>
           <p className='text-xm font-normal tracking-tight text-black/50 dark:text-white/50 leading-6'>
-            Looking for your dream home or ready to sell? Our expert team offers
-            personalized guidance and market expertise tailored to you.
+            ¿Buscas tu hogar soñado o estás listo para vender? Nuestro equipo de expertos ofrece
+            orientación personalizada y experiencia en el mercado adaptada a ti.
           </p>
         </div>
       </div>
@@ -47,11 +47,11 @@ export default function ContactUs() {
             />
             <div className='absolute top-6 left-6 lg:top-12 lg:left-12 flex flex-col gap-2'>
               <h5 className='text-xl xs:text-2xl mobile:text-3xl font-medium tracking-tight text-white'>
-                Contact information
+                Información de contacto
               </h5>
               <p className='text-sm xs:text-base mobile:text-xm font-normal text-white/80'>
-                Ready to find your dream home or sell your property? We’re here
-                to help!
+                ¿Listo para encontrar tu hogar soñado o vender tu propiedad? ¡Estamos aquí
+                para ayudar!
               </p>
             </div>
             <div className='absolute bottom-6 left-6 lg:bottom-12 lg:left-12 flex flex-col gap-4 text-white'>

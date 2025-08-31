@@ -47,10 +47,10 @@ const Testimonial = () => {
                 <div>
                     <p className="text-white text-base font-semibold flex gap-2">
                         <Icon icon="ph:house-simple-fill" className="text-2xl text-primary" />
-                        Testimonials
+                        Testimonios
                     </p>
                     <h2 className="lg:text-52 text-40 font-medium text-white">
-                        What our clients say
+                        Lo que dicen nuestros clientes
                     </h2>
                 </div>
                 <Carousel

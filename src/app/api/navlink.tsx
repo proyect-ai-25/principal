@@ -5,5 +5,5 @@ export const navLinks: NavLinks[] = [
   { label: 'Propiedades', href: '/properties' },
   { label: 'Blog', href: '/blogs' },
   { label: 'Contacto', href: '/contactus' },
-  { label: 'Documentos', href: '/documentation' },
+  { label: 'Cerrar Sesión', href: '/signin' },
 ]

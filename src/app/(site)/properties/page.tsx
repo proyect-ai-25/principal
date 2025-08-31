@@ -3,16 +3,16 @@ import PropertiesListing from "@/components/Properties/PropertyList";
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Property List | Homely",
+    title: "Property List | Cm Properties",
 };
 
 const page = () => {
     return (
         <>
             <HeroSub
-                title="Discover inspiring designed homes."
-                description="Experience elegance and comfort with our exclusive luxury  villas, designed for sophisticated living."
-                badge="Properties"
+                title="Descubra casas diseñadas con inspiración."
+                description="Experimente la elegancia y el confort con nuestras exclusivas villas de lujo, diseñadas para una vida sofisticada."
+                badge="Propiedades"
             />
             <PropertiesListing />
         </>

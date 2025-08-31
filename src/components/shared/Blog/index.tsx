@@ -38,14 +38,14 @@ const BlogSmall: React.FC = () => {
                             Blog
                         </p>
                         <h2 className="lg:text-52 text-40 font-medium dark:text-white">
-                            Real estate insights
+                            Perspectivas inmobiliarias y consejos
                         </h2>
                         <p className='text-dark/50 dark:text-white/50 text-xm'>
-                            Stay ahead in the property market with expert advice and updates
+                            Mantente a la vanguardia en el mercado inmobiliario con consejos y actualizaciones de expertos
                         </p>
                     </div>
                     <Link href="/blogs" className='bg-dark dark:bg-white text-white dark:text-dark py-4 px-8 rounded-full hover:bg-primary duration-300' aria-label="Read all blog articles">
-                        Read all articles
+                        Leer todos los artículos
                     </Link>
                 </div>
                 <div className="grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-12">

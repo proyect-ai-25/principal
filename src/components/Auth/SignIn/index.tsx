@@ -14,27 +14,26 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
   const [password, setPassword] = useState("admin123");
   const [error, setError] = useState("");
   const authDialog = useContext(AuthDialogContext);
-
+  const router = useRouter();
 
   const handleSubmit = async (e: any) => {
-    const notify = () => toast('Here is your toast.');
+    //const notify = () => toast('Here is your toast.');
     e.preventDefault();
     const result = await signIn("credentials", {
       redirect: false,
-      username,
+      email: username,
       password,
     });
     if (result?.error) {
       setError(result.error);
     }
     if (result?.status === 200) {
-      setTimeout(() => {
-        signInOpen(false);
-      }, 1200);
-      authDialog?.setIsSuccessDialogOpen(true);
-      setTimeout(() => {
-        authDialog?.setIsSuccessDialogOpen(false);
-      }, 1100);
+    if (result && result.ok) {
+      // login success
+      router.push('/properties');
+    } else {
+      alert("Usuario o contraseña incorrectos");
+    }
     } else {
       authDialog?.setIsFailedDialogOpen(true);
       setTimeout(() => {
@@ -63,7 +62,7 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
         <div className="mb-[22px]">
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Email"
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -75,7 +74,7 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
             type="password"
             required
             value={password}
-            placeholder="Password"
+            placeholder="Contraseña"
             onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded-2xl border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
           />
@@ -102,7 +101,7 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
       <p className="text-body-secondary text-base text-center">
         ¿Aún no eres miembro?{" "}
         <Link href="/" className="text-primary hover:underline">
-          Inscribirse
+          Registrarse
         </Link>
       </p>
     </>
