@@ -94,12 +94,23 @@ const Header: React.FC = () => {
                 : 'text-dark hover:text-primary'
                 }`}
               >
-                <Icon icon={'ph:phone-bold'} width={24} height={24} />
-                +1-212-456-789
-
                 <Icon icon={'ph:user'} width={24} height={24} />
                 {session?.user?.email}
               </Link>
+              <Link href='https://wa.me/+593995421104?text=Hello%20CmProperties%2C%20I%20have%20a%20question?'
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-base text-inherit flex items-center gap-2 border-r pr-6 ${isHomepage
+                  ? sticky
+                    ? 'text-dark dark:text-white hover:text-primary border-dark dark:border-white'
+                    : 'text-white hover:text-primary'
+                  : 'text-dark hover:text-primary'
+                  }`}
+              >
+                <Icon icon={'ph:phone-bold'} width={24} height={24} />
+                Escríbenos por WhatsApp
+              </Link>
+
             </div>
             <div>
               <button
@@ -156,16 +167,32 @@ const Header: React.FC = () => {
             </div>
             <nav className='flex flex-col items-start gap-4'>
               <ul className='w-full'>
-                {navLinks.map((item, index) => (
-                  <NavLink key={index} item={item} onClick={() => setNavbarOpen(false)} />
-                ))}
+                {session?.user?.admin ? (
+                  navLinks.map((item, index) => (
+                    <NavLink key={index} item={item} onClick={() => setNavbarOpen(false)} />
+                  ))
+                ) : (
+                  navLinks
+                    .filter(item => item.role !== "admin")
+                    .map((item, index) => (
+                      <NavLink key={index} item={item} onClick={() => setNavbarOpen(false)} />
+                    ))
+                )}
                 <li className='flex items-center gap-4'>
-                  <Link href="/signin" className='py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full border border-primary font-semibold mt-3 hover:bg-transparent hover:text-primary duration-300'>
-                    Iniciar sesión
-                  </Link>
-                  <Link href="/signup" className='py-4 px-8 bg-transparent border border-primary text-base leading-4 block w-fit text-primary rounded-full font-semibold mt-3 hover:bg-primary hover:text-white duration-300'>
-                    Registrarse
-                  </Link>
+
+                  {
+                    session?.user ? (
+                      <Link href="/signin" className='py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full border border-primary font-semibold mt-3 hover:bg-transparent hover:text-primary duration-300'>
+                        Cerrar Sesión
+                      </Link>
+                    ) : (
+                      <><Link href="/signin" className='py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full border border-primary font-semibold mt-3 hover:bg-transparent hover:text-primary duration-300'>
+                        Iniciar sesión
+                      </Link><Link href="/signup" className='py-4 px-8 bg-transparent border border-primary text-base leading-4 block w-fit text-primary rounded-full font-semibold mt-3 hover:bg-primary hover:text-white duration-300'>
+                          Registrarse
+                        </Link></>
+                    )
+                  }
                 </li>
               </ul>
             </nav>
@@ -179,7 +206,7 @@ const Header: React.FC = () => {
               hello@homely.com
             </Link>
             <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
-              +1-212-456-7890{' '}
+              +593-99-542-11040{' '}
             </Link>
           </div>
         </div>

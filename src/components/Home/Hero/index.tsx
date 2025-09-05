@@ -15,16 +15,16 @@ const Hero: React.FC = () => {
               <Link href="/contactus" className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-dark hover:bg-transparent hover:text-white text-base font-semibold rounded-full hover:cursor-pointer'>
                 Contáctanos
               </Link>
-              <button className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white dark:text-dark hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer'>
+              <Link href="/properties" className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white dark:text-dark hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer'>
                 Ver detalles
-              </button>
+              </Link>
             </div>
           </div>
           <div className='hidden md:block absolute -top-2 -right-68'>
             <Image
-              src={'/images/hero/heroBanner.png'}
+              src={'/images/hero/18.jpg'}
               alt='heroImg'
-              width={1082}
+              width={2082}
               height={1016}
               priority={false}
               unoptimized={true}

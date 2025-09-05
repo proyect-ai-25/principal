@@ -9,6 +9,7 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ item, onClick }) => {
+
   const path = usePathname()
   const itemLabelToPath = `/${item.label.toLowerCase().replace(/\s+/g, '-')}`
 

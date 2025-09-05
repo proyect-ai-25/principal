@@ -22,9 +22,6 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
     const data = new FormData(e.currentTarget);
     const value = Object.fromEntries(data.entries());
     const finalData = { ...value };
-
-
-    console.log('register', finalData);
     registrarUsuario(finalData).then(() => {
       router.push("/properties");
     });

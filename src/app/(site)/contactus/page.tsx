@@ -2,8 +2,9 @@ import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from "next";
+import { Contacto } from '@/components/Contactus/contacto';
 export const metadata: Metadata = {
-    title: "Contact Us | Cm Properties",
+    title: "Contacto | Cm Properties",
 };
 
 export default function ContactUs() {
@@ -20,7 +21,7 @@ export default function ContactUs() {
             />
           </span>
           <p className='text-base font-semibold text-badge dark:text-white/90'>
-            Contact us
+            Contacta con nosotros
           </p>
         </div>
         <div className='text-center'>
@@ -28,7 +29,7 @@ export default function ContactUs() {
             ¿Tienes preguntas? ¡Estamos listos para ayudar!
           </h3>
           <p className='text-xm font-normal tracking-tight text-black/50 dark:text-white/50 leading-6'>
-            ¿Buscas tu hogar soñado o estás listo para vender? Nuestro equipo de expertos ofrece
+            ¿Buscas tu finca soñada? Nuestro equipo de expertos ofrece
             orientación personalizada y experiencia en el mercado adaptada a ti.
           </p>
         </div>
@@ -50,8 +51,7 @@ export default function ContactUs() {
                 Información de contacto
               </h5>
               <p className='text-sm xs:text-base mobile:text-xm font-normal text-white/80'>
-                ¿Listo para encontrar tu hogar soñado o vender tu propiedad? ¡Estamos aquí
-                para ayudar!
+               ¿Listo para encontrar la finca de tus sueños o vender tu propiedad? ¡Estamos aquí para ayudarte!
               </p>
             </div>
             <div className='absolute bottom-6 left-6 lg:bottom-12 lg:left-12 flex flex-col gap-4 text-white'>
@@ -59,7 +59,7 @@ export default function ContactUs() {
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:phone'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary'>
-                    +1 0239 0310 1122
+                    +593-99-542-11040
                   </p>
                 </div>
               </Link>
@@ -74,56 +74,13 @@ export default function ContactUs() {
               <div className='flex items-center gap-4'>
                 <Icon icon={'ph:map-pin'} width={32} height={32} />
                 <p className='text-sm xs:text-base mobile:text-xm font-normal'>
-                  Blane Street, Manchester
+                  Quito, Ecuador
                 </p>
               </div>
             </div>
           </div>
           <div className='flex-1/2'>
-            <form>
-              <div className='flex flex-col gap-8'>
-                <div className='flex flex-col lg:flex-row gap-6'>
-                  <input
-                    type='text'
-                    name='username'
-                    id='username'
-                    autoComplete='username'
-                    placeholder='Name*'
-                    required
-                    className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline w-full'
-                  />
-                  <input
-                    type='number'
-                    name='mobile'
-                    id='mobile'
-                    autoComplete='mobile'
-                    placeholder='Phone number*'
-                    required
-                    className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline w-full'
-                  />
-                </div>
-                <input
-                  type='email'
-                  name='email'
-                  id='email'
-                  autoComplete='email'
-                  placeholder='Email address*'
-                  required
-                  className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline'
-                />
-                <textarea
-                  rows={8}
-                  cols={50}
-                  name='message'
-                  id='message'
-                  placeholder='Write here your message'
-                  required
-                  className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-2xl outline-primary focus:outline'></textarea>
-                <button className='px-8 py-4 rounded-full bg-primary text-white text-base font-semibold w-full mobile:w-fit hover:cursor-pointer hover:bg-dark duration-300'>
-                  Send message
-                </button>
-              </div>
-            </form>
+            <Contacto />
           </div>
         </div>
       </div>

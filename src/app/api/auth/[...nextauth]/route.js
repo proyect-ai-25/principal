@@ -33,7 +33,6 @@ const handler = NextAuth({
         });
 
         const user = await res.json();
-        console.log('user', user)
 
         if (res.ok && user) {
           return user; // Lo que retorna tu backend
